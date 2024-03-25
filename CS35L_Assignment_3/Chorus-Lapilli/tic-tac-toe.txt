@@ -1,0 +1,12 @@
+I have installed and set up node.js, react and vscode on two devices: one is macOS and the other is Windows. 
+MacOS had me download a package which I ran through the terminal and then was smooth from there. Windows had more steps. 
+Both had some hiccups during the first few attempts but after downloading the node.js package from the website it was able to run the react code via chrome. 
+This allowed instant feedback according to the changed code when I saved the ‘App.js’ file I was working on (and refreshed the page if necessary).
+The square function was created to store a value. The squares were divided into three rows to make it into a 3x3 grid. 
+onSquareClick was implemented to allow feedback when it was clicked on by a user. 
+The three values used here are ‘null’, ‘X’ and ‘O’. The Board object has the 3x3 grid square object and it is later moved under the Game main function. 
+The edited array of squares is updated as the current state with setSquares. 
+However, when we add the function of history and time travel, we save an array of board states as history, and the new history is appended to the old array before using the setHistory function to update it. 
+handleClick decides what a square is going to be filled in with depending on ‘xIsNext’.calculateWinner checks whether the board is in either one of 8 victory states before every move. 
+If the clicked square is either not empty or the game is over, handleClick immediately returns resulting in the click being essentially ignored. 
+The tic-tac-toe game was quite easily made following the tutorial. Although, there were many cases of my syntaxes having errors because of typing all the code manually after reading through the example case.

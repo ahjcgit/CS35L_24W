@@ -1,0 +1,263 @@
+--- exer1.html	2024-01-13 21:31:20.755124000 -0800
++++ exer3.html	2024-01-20 21:49:42.613945000 -0800
+@@ -1,15 +1,15 @@
+ <!DOCTYPE html>
+ <html lang='en'>
+ <head>
+-<title>Assignment 1. Files and shell scripting</title>
+-<meta charset='UTF-8'>
++<title>Assignment 27. Files and shell scripting</title>
++<meta charset='US-ASCII'>
+ <link rel='author' href='mailto:eggert@cs.ucla.edu'>
+ <link rel='license' href='copyright.html'>
+ </head>
+ 
+ <body>
+ 
+-<h1>Assignment 1. Files and shell scripting</h1>
++<h1>Assignment 27. Files and shell scripting</h1>
+ 
+ <p><small>[<a href='../index.html'>course home</a> &gt; <a href='../assign.html'>assignments</a>]</small></p>
+ 
+@@ -21,7 +21,7 @@
+   that is a prototype for
+   modern <a href='https://en.wikipedia.org/wiki/Integrated_development_environment'>integrated
+   development environments</a> (IDEs).  Software developers should be expert in both shell scripting and
+-  IDEs, even if they don’t necessarily use POSIXish shells or Emacs
++
+   per se.</p>
+ 
+ <p>Do this assignment on the SEASnet GNU/Linux servers
+@@ -36,18 +36,18 @@
+ in via a separate session before logging out of your first session!).</p>
+ 
+ <p>As this course has no textbook, a main goal of this assignment is
+-  covering how you can discover details about this assignment’s topic,
++  covering how you can discover details about this assignment's topic,
+   details that may not be covered in lecture. You can get
+   many of the details by following all the links in this assignment
+   and getting the gist of those web pages (which is something you should do,
+-  unless the text around a link says that you don’t need to all
++  unless the text around a link says that you don't need to all
+   of the referenced document).
+-  However, this won’t
+-  suffice for everything and you’ll need to do some learning-by-doing
++  However, this won't
++  suffice for everything and you'll need to do some learning-by-doing
+   to do the assignment well. The idea is that you
+   can put this experience to good use later in this course (and in
+   real life!) when you need to come up to speed with a large software
+-  ecosystem. That being said, don’t let yourself get discouraged
++  ecosystem. That being said, don't let yourself get discouraged
+   if a detail cannot be found by reading the online documentation.
+ If you need a hint, ask a <abbr>TA</abbr> or an <abbr>LA</abbr>.
+ (This assignment is not intended to be done without any hints!)</p>
+@@ -68,7 +68,7 @@
+      and you are not expected to read it all.</li>
+ </ul>
+ 
+-<!-- diff，在UNIX系統上的一個工具程式，它可以比較兩個檔案之間的不同。通常它被用來比較同一個檔案，在不同版本間的差異。它可以產生一個擴展名為.diff或.patch的檔案，這個檔案可以被另一個工具程式patch來使用。-->
++
+ 
+ </section>
+ <section>
+@@ -93,7 +93,7 @@
+     If you do multiple Emacs sessions, name your dribble
+     files <samp>lab2.drib</samp>, <samp>lab3.drib</samp>, etc.
+     (You need to generate dribble files only for this assignment;
+-    we won’t bother with dribble files in later assignments.)</li>
++    we won't bother with dribble files in later assignments.)</li>
+ </ol>
+ 
+ <!-- DELETE-ME DELETE-ME DELETE-ME -->
+@@ -110,12 +110,12 @@
+ <h3>Lab 1.1: Moving around in Emacs</h3>
+ 
+ <ol>
+-<li>Download a copy of the web page you’re looking at into a
++<li>Download a copy of the web page you're looking at into a
+ file named <samp>assign1.html</samp>. You can do this
+ with the following shell command:
+ <pre><samp><a href='https://www.gnu.org/software/wget/'>wget2</a> <var>URL</var>
+ </samp></pre>
+-where <samp><var>URL</var></samp> is this web page’s URL.</li>
++where <samp><var>URL</var></samp> is this web page's URL.</li>
+ <li>Use the shell command <samp><a
+ href='http://pubs.opengroup.org/onlinepubs/9699919799/utilities/cp.html'>cp</a></samp>
+ to make three copies of this file. Call the copies
+@@ -127,7 +127,7 @@
+ <li>Now move the cursor to the start of the first later occurrence of the word "arro&#119;".</li>
+ <li>Now move the cursor to the end of the current line.</li>
+ <li>Now move the cursor to the beginning of the current line.</li>
+-<li>Did you move the cursor using the arrow keys instead of using Emacs’s
++<li>Did you move the cursor using the arrow keys instead of using Emacs's
+   searching capabilities? If so, please learn how to search, and repeat the
+   above steps by doing searching.</li>
+ <li>When you are done, exit Emacs.</li>
+@@ -155,15 +155,15 @@
+ Once again, try to accomplish the tasks using a small number of keystrokes.
+ When you are done, save the file and exit back to the command line. You can
+ check your work by using a browser to view <samp>exer2.html</samp>. Also,
+-check that you haven’t deleted something that you want to keep, by using
++check that you haven't deleted something that you want to keep, by using
+ the following command:</p>
+ 
+ <pre><samp><a href='https://www.gnu.org/software/diffutils/'>diff</a> -u exer1.html exer2.html &gt;exer2.diff
+ </samp></pre>
+ 
+ <p>The output file <samp>exer2.diff</samp> should describe only text
+-that you wanted to remove. Don’t remove <samp>exer2.diff</samp>;
+-you’ll need it later.</p>
++that you wanted to remove. Don't remove <samp>exer2.diff</samp>;
++you'll need it later.</p>
+ </section>
+ 
+ <section>
+@@ -221,7 +221,7 @@
+ <li>Repeat the process, until the earlier part of the file is identical
+ to what was in the original.</li>
+ <li>Delete the last part of the file, which contains the diff output.</li>
+-<li>… except we didn’t really want to do that, so undo the deletion.</li>
++
+ 
+ <li>Turn the diff output into a comment, by surrounding it with
+   "<samp>&lt;!--</samp>" and "<samp>--&gt;</samp>".
+@@ -229,7 +229,7 @@
+   escape them by replacing each such "<samp>--&gt;</samp>" with
+   "<samp>--&amp;gt;</samp>".
+ 
+-<li>Now let’s try some search and replaces.
++<li>Now let's try some search and replaces.
+ Search the text document for the pattern "<samp>&lt;ol&gt;</samp>".
+ How many instances did you find?
+ Use the search and
+@@ -249,9 +249,9 @@
+ <h3>Lab 1.5: Exploring the operating system outside Emacs</h3>
+ 
+ <p>Use the commands that you learned in class to find
+-answers to the following questions. Don’t use a search engine like Google to
++answers to the following questions. Don't use a search engine like Google to
+ find previous editions of this assignment and/or its answers, and
+-don’t ask your neighbor, don’t use GitHub, etc.
++don't ask your neighbor, don't use GitHub, etc.
+ When you find a new command, run it so you can see exactly how it
+ works.
+ </p>
+@@ -310,7 +310,7 @@
+ <li>
+ What is the oldest file in the <samp>/usr/lib64</samp>
+ directory? Use the last-modified time to determine age. Specify the
+-name of the file without the <samp>/usr/lib64/</samp> prefix. Don’t ignore
++name of the file without the <samp>/usr/lib64/</samp> prefix. Don't ignore
+ files whose names start with "<samp>.</samp>", but do ignore
+ files under subdirectories of <samp>/usr/lib64/</samp>.
+ Consider files of all types, that is, your answer might be
+@@ -327,8 +327,8 @@
+ </li>
+ 
+ <li>
+-Use the <samp>ps</samp> command to find your own login shell’s process,
+-all that process’s ancestors, and all its descendants. Some
++Use the <samp>ps</samp> command to find your own login shell's process,
++all that process's ancestors, and all its descendants. Some
+ <samp>ps</samp> options that you might find useful include
+ <samp>-e</samp>, <samp>-f</samp>, <samp>-j</samp>, <samp>-l</samp>,
+ <samp>-t</samp>, <samp>-H</samp>, and <samp>-T</samp>.
+@@ -340,11 +340,11 @@
+ <h3>Lab 1.6: Doing commands in Emacs</h3>
+ 
+ <p>
+-Do these tasks all within Emacs. Don’t use a shell subcommand
++Do these tasks all within Emacs. Don't use a shell subcommand
+ if you can avoid it.</p>
+ 
+ <ol>
+-<li>Create a new directory named "<samp>cs35L-lab1</samp>" that’s right under
++<li>Create a new directory named "<samp>cs35L-lab1</samp>" that's right under
+ your home directory.</li>
+ 
+ <li>In that directory, create a C source file <samp>hello.c</samp>
+@@ -384,13 +384,13 @@
+ </li>
+ 
+ <li>Run the compiled program from Emacs using the <samp>M-!</samp> command,
+-and put the program’s standard output into a file
++and put the program's standard output into a file
+   named <samp>hello-a1</samp> and its standard error into a file
+   <samp>hello-a2</samp>.</li>
+ 
+ <li>Same as before, except run the program with standard
+   input being closed,
+-  and put the program’s standard output and error into
++  and put the program's standard output and error into
+   <samp>hello-b1</samp> and <samp>hello-b2</samp>, respectively.
+   Here, &ldquo;closed&rdquo; does not mean the standard input is an empty file;
+   it means that standard input is not open at all, to any file.
+@@ -400,13 +400,13 @@
+ 
+ <li>Same as before, except run the program with standard
+   input being the file <samp>/etc/passwd</samp>,
+-  and put the program’s standard output and error into
++  and put the program's standard output and error into
+   <samp>hello-c1</samp> and <samp>hello-c2</samp>.</li>
+ 
+ <li>Same as before, except run the program with standard
+   input being the file <samp>/etc/passwd</samp>
+   and standard output being the file <samp>/dev/full</samp>,
+-  and put the program’s standard error into <samp>hello-d2</samp>.</li>
++  and put the program's standard error into <samp>hello-d2</samp>.</li>
+ 
+ </ol>
+ </section>
+@@ -414,13 +414,13 @@
+ <section>
+ <h2>Homework: Scripting in the shell</h2>
+ 
+-<p>For the homework assume you’re in the standard C or <a
++<p>For the homework assume you're in the standard C or <a
+ href='http://en.wikipedia.org/wiki/POSIX'>POSIX</a> <a
+ href='http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html#tag_07'>locale</a>. The
+ shell command <a
+ href='http://pubs.opengroup.org/onlinepubs/9699919799/utilities/locale.html'><samp>locale</samp></a>
+ should output <samp>LC_CTYPE="C"</samp>
+-or <samp>LC_CTYPE="POSIX"</samp>. If it doesn’t, use the following
++or <samp>LC_CTYPE="POSIX"</samp>. If it doesn't, use the following
+ shell command:</p>
+ 
+ <pre><samp><a href='http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#export'>export</a> LC_ALL='C'
+@@ -445,7 +445,7 @@
+   I/O redirection and pipes.</p>
+ 
+ <p>For each command <samp>tr</samp>,
+-  <samp>sort</samp>, <samp>comm</samp>, read the command’s man page and
++  <samp>sort</samp>, <samp>comm</samp>, read the command's man page and
+   use that to deduce what the command should do given its operands
+   shown below.</p>
+ 
+@@ -459,7 +459,7 @@
+ </p>
+ 
+ <p>Then, take a text file containing the HTML in this
+-assignment’s web page, and run the following commands with that
++assignment's web page, and run the following commands with that
+ text file being standard input. Also, look generally at what each command outputs (in
+ particular, how its output differs from that of the previous command),
+ and why.</p>
+@@ -472,7 +472,7 @@
+ tr -cs 'A-Za-z' '[\n*]' | sort -u | comm -23 - sorted.words
+ </samp></pre>
+ 
+-<p>Let’s take the last command
++<p>Let's take the last command
+ as the crude implementation of an
+   English spelling checker.
+   This implementation mishandles the input file
+@@ -532,7 +532,7 @@
+     your <samp>myspell</samp> script can operate without
+     an auxiliary dictionary file to read.</li>
+   <li><samp>notes.txt</samp>, a text file containing any other
+-    notes or comments that you’d like us to see.</li>
++    notes or comments that you'd like us to see.</li>
+ </ul>
+ 
+ <p>All files other than the <samp>.drib</samp> files should use

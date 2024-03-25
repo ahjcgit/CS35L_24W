@@ -1,0 +1,124 @@
+--- exer1.html	2024-01-13 21:31:20.755124000 -0800
++++ exer4.html	2024-01-13 22:13:18.554063000 -0800
+@@ -74,7 +74,7 @@
+ <section>
+ <h3>Lab 1.0: Getting started with GNU/Linux and Emacs</h3>
+ 
+-<ol>
++<oL>
+   <li>Log into SEASnet.</li>
+   <li>Make sure your PATH is set correctly (see above).</li>
+   <li>Run the shell command <samp>type emacs</samp> which should
+@@ -109,7 +109,7 @@
+ <section>
+ <h3>Lab 1.1: Moving around in Emacs</h3>
+ 
+-<ol>
++<oL>
+ <li>Download a copy of the web page you’re looking at into a
+ file named <samp>assign1.html</samp>. You can do this
+ with the following shell command:
+@@ -137,7 +137,7 @@
+ <section>
+ <h3>Lab 1.2: Deleting text in Emacs</h3>
+ 
+-<ol>
++<oL>
+ <li>Use Emacs to edit the file <samp>exer2.html</samp>. The idea is to
+ delete its HTML comments; the resulting page should display the same
+ text as the original.</li>
+@@ -169,7 +169,7 @@
+ <section>
+ <h3>Lab 1.3: Inserting text in Emacs</h3>
+ 
+-<ol>
++<oL>
+ <li>Use Emacs to edit the file <samp>exer3.html</samp>.</li>
+ 
+ <li>Change the first two instances of "Assignment 1" to "Assignment 27".</li>
+@@ -208,7 +208,7 @@
+ that you should know, like copy and paste, search and replace, and undo.
+ </p>
+ 
+-<ol>
++<oL>
+ <li>Execute the command "<samp>cat exer2.html exer2.diff &gt;exer4.html</samp>"
+ to create a file <samp>exer4.html</samp> that contains a copy of <samp>exer2.html</samp> followed by a copy of <samp>exer2.diff</samp>.</li>
+ <li>Use Emacs to edit the file <samp>exer4.html</samp>.
+@@ -256,7 +256,7 @@
+ works.
+ </p>
+ 
+-<ol>
++<oL>
+ <li>
+ Where are the <samp>sh</samp>, <samp>sleep</samp>, and <samp>type</samp>
+ commands located?
+@@ -343,7 +343,7 @@
+ Do these tasks all within Emacs. Don’t use a shell subcommand
+ if you can avoid it.</p>
+ 
+-<ol>
++<oL>
+ <li>Create a new directory named "<samp>cs35L-lab1</samp>" that’s right under
+ your home directory.</li>
+ 
+@@ -569,3 +569,58 @@
+ </body>
+ </html>
+ <!-- end of HTML resource -->
++<!----- exer1.html	2024-01-12 11:29:01.784450000 -0800
+++++ exer2.html	2024-01-12 11:42:06.212089000 -0800
++@@ -68,7 +68,7 @@
++      and you are not expected to read it all.</li>
++ </ul>
++ 
++-<!-- diff，在UNIX系統上的一個工具程式，它可以比較兩個檔案之間的不同。通常它被用來比較同一個檔案，在不同版本間的差異。它可以產生一個擴展名為.diff或.patch的檔案，這個檔案可以被另一個工具程式patch來使用。--&gt;
+++
++ 
++ </section>
++ <section>
++@@ -96,7 +96,7 @@
++     we won’t bother with dribble files in later assignments.)</li>
++ </ol>
++ 
++-<!-- DELETE-ME DELETE-ME DELETE-ME --&gt;
+++
++ <p>
++ For the following lab exercises,
++ use intelligent ways of answering the questions. For example, if
++@@ -514,9 +514,9 @@
++ <section>
++ <h2>Submit</h2>
++ 
++-<!-- You can learn more about HTML comments at
++-	<https://en.wikipedia.org/wiki/HTML_comment#Comments>.
++-	--&gt;
+++
+++
+++
++ 
++ 	  <p>Submit the following files within a compressed <a href='https://en.wikipedia.org/wiki/Tar_(computing)'>tarball</a> named
++ 	    <samp>assign1.tgz</samp>.</p>
++@@ -547,10 +547,10 @@
++ 
++ <p>should output a list of file names that contains <samp>myspell</samp>
++   etc., with sizes and other metainformation about the files.</p>
++-<!--
++-<p>Or maybe more lines, if something has gone wrong.</p>
++--<->-
++---&gt;
+++
+++
+++
+++
++ </section>
++ 
++ <footer>
++@@ -568,4 +568,4 @@
++ 
++ </body>
++ </html>
++-<!-- end of HTML resource --&gt;
+++
++-->

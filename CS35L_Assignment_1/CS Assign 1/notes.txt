@@ -1,0 +1,441 @@
+Answers for Lab 0.5
+1. /usr/bin
+2. sed, seq
+3. The emacs inside the bin folder
+4. gcc (GCC) 8.5.0, gcc 13.2.0
+5. u+sz adds setuid permission for the owner, followed by execute permission, o-w removes the write permission for other users
+6. /usr/local/cs, /usr/local/cs/.del, /usr/local/cd/.del/autoconf-2.71, usr/local/cs/.del/gcc-13.2.0-bak, usr/local/cs/.del/gettext-0.22.2
+7. 5384 found with command find -type f|wc -1
+8. 371 found with command find /usr/local/cs/bin -type l | wc -l
+9. find /usr/lib64 -maxdepth 1 -exec ls -lt --time=mtime {} +
+-rwxr-xr-x.   1 root root    74744 Aug 12  2018 /usr/lib64/libbz2.so.1.0.6
+10. transpose-chars, transpose-lines, transpose-paragraphs, transpose-sentences, transpose-sexps, transpose-regions
+11. Pulled from man page: Reinsert ("paste") the last stretch of killed text. More precisely, reinsert the most recent kill, which is the stretch of killed text most recently killed OR yanked. Put point at the end, and set mark at the beginning without activating it. With just C-u as argument, put point at beginning, and mark at end. With argument N, reinsert the Nth most recent kill. C-y
+12. ps -e -f -j -H
+
+UID          PID    PPID    PGID     SID  C STIME TTY          TIME CMD
+root           2       0       0       0  0  2023 ?        00:00:01 [kthreadd]
+root           3       2       0       0  0  2023 ?        00:00:00   [rcu_gp]
+root           4       2       0       0  0  2023 ?        00:00:00   [rcu_par_gp]
+root           6       2       0       0  0  2023 ?        00:00:00   [kworker/0:0H-events_highpri]
+root           9       2       0       0  0  2023 ?        00:00:00   [mm_percpu_wq]
+root          10       2       0       0  0  2023 ?        00:00:13   [ksoftirqd/0]
+root          11       2       0       0  0  2023 ?        00:12:32   [rcu_sched]
+root          12       2       0       0  0  2023 ?        00:00:00   [migration/0]
+root          13       2       0       0  0  2023 ?        00:00:00   [watchdog/0]
+root          14       2       0       0  0  2023 ?        00:00:00   [cpuhp/0]
+root          15       2       0       0  0  2023 ?        00:00:00   [cpuhp/1]
+root          16       2       0       0  0  2023 ?        00:00:04   [watchdog/1]
+root          17       2       0       0  0  2023 ?        00:00:00   [migration/1]
+root          18       2       0       0  0  2023 ?        00:00:13   [ksoftirqd/1]
+root          20       2       0       0  0  2023 ?        00:00:00   [kworker/1:0H-events_highpri]
+root          21       2       0       0  0  2023 ?        00:00:00   [cpuhp/2]
+root          22       2       0       0  0  2023 ?        00:00:03   [watchdog/2]
+root          23       2       0       0  0  2023 ?        00:00:00   [migration/2]
+root          24       2       0       0  0  2023 ?        00:00:11   [ksoftirqd/2]
+root          26       2       0       0  0  2023 ?        00:00:00   [kworker/2:0H-events_highpri]
+root          27       2       0       0  0  2023 ?        00:00:00   [cpuhp/3]
+root          28       2       0       0  0  2023 ?        00:00:02   [watchdog/3]
+root          29       2       0       0  0  2023 ?        00:00:00   [migration/3]
+root          30       2       0       0  0  2023 ?        00:00:12   [ksoftirqd/3]
+root          32       2       0       0  0  2023 ?        00:00:00   [kworker/3:0H-events_highpri]
+root          37       2       0       0  0  2023 ?        00:00:00   [kdevtmpfs]
+root          38       2       0       0  0  2023 ?        00:00:00   [netns]
+root          39       2       0       0  0  2023 ?        00:00:00   [rcu_tasks_trace]
+root          40       2       0       0  0  2023 ?        00:00:00   [rcu_tasks_rude_]
+root          41       2       0       0  0  2023 ?        00:00:02   [kauditd]
+root          43       2       0       0  0  2023 ?        00:00:01   [khungtaskd]
+root          44       2       0       0  0  2023 ?        00:00:05   [oom_reaper]
+root          45       2       0       0  0  2023 ?        00:00:00   [writeback]
+root          46       2       0       0  0  2023 ?        00:00:00   [kcompactd0]
+root          47       2       0       0  0  2023 ?        00:00:00   [ksmd]
+root          48       2       0       0  0  2023 ?        00:00:24   [khugepaged]
+root          49       2       0       0  0  2023 ?        00:00:00   [crypto]
+root          50       2       0       0  0  2023 ?        00:00:00   [kintegrityd]
+root          51       2       0       0  0  2023 ?        00:00:00   [kblockd]
+root          52       2       0       0  0  2023 ?        00:00:00   [blkcg_punt_bio]
+root          53       2       0       0  0  2023 ?        00:00:00   [tpm_dev_wq]
+root          54       2       0       0  0  2023 ?        00:00:00   [md]
+root          55       2       0       0  0  2023 ?        00:00:00   [edac-poller]
+root          56       2       0       0  0  2023 ?        00:00:00   [watchdogd]
+root          58       2       0       0  0  2023 ?        00:00:00   [kworker/0:1H-kblockd]
+root          92       2       0       0  0  2023 ?        00:01:02   [kswapd0]
+root         194       2       0       0  0  2023 ?        00:00:00   [kthrotld]
+root         195       2       0       0  0  2023 ?        00:00:00   [acpi_thermal_pm]
+root         196       2       0       0  0  2023 ?        00:00:00   [kmpath_rdacd]
+root         197       2       0       0  0  2023 ?        00:00:00   [kaluad]
+root         198       2       0       0  0  2023 ?        00:00:00   [kworker/2:1H-kblockd]
+root         199       2       0       0  0  2023 ?        00:00:00   [ipv6_addrconf]
+root         201       2       0       0  0  2023 ?        00:00:00   [kstrp]
+root         316       2       0       0  0  2023 ?        00:00:02   [kworker/1:1H-kblockd]
+root         318       2       0       0  0  2023 ?        00:00:00   [kworker/3:1H-kblockd]
+root         520       2       0       0  0  2023 ?        00:00:00   [hv_vmbus_con]
+root         523       2       0       0  0  2023 ?        00:00:00   [hv_pri_chan]
+root         524       2       0       0  0  2023 ?        00:00:00   [hv_sub_chan]
+root         569       2       0       0  0  2023 ?        00:00:00   [scsi_eh_0]
+root         570       2       0       0  0  2023 ?        00:00:00   [scsi_tmf_0]
+root         571       2       0       0  0  2023 ?        00:00:00   [storvsc_error_w]
+root         631       2       0       0  0  2023 ?        00:00:00   [kdmflush]
+root         640       2       0       0  0  2023 ?        00:00:00   [kdmflush]
+root         653       2       0       0  0  2023 ?        00:00:00   [kdmflush]
+root         679       2       0       0  0  2023 ?        00:00:00   [jbd2/dm-0-8]
+root         680       2       0       0  0  2023 ?        00:00:00   [ext4-rsv-conver]
+root         724       2       0       0  0  2023 ?        00:00:00   [jbd2/dm-2-8]
+root         725       2       0       0  0  2023 ?        00:00:00   [ext4-rsv-conver]
+root         957       2       0       0  0  2023 ?        00:00:29   [hv_balloon]
+root        1012       2       0       0  0  2023 ?        00:00:00   [nfit]
+root        1019       2       0       0  0  2023 ?        00:00:00   [kdmflush]
+root        1020       2       0       0  0  2023 ?        00:00:00   [kdmflush]
+root        1021       2       0       0  0  2023 ?        00:00:00   [kdmflush]
+root        1068       2       0       0  0  2023 ?        00:00:00   [jbd2/dm-5-8]
+root        1069       2       0       0  0  2023 ?        00:00:00   [ext4-rsv-conver]
+root        1076       2       0       0  0  2023 ?        00:00:00   [jbd2/sda2-8]
+root        1077       2       0       0  0  2023 ?        00:00:00   [ext4-rsv-conver]
+root        1092       2       0       0  0  2023 ?        00:00:07   [jbd2/dm-3-8]
+root        1093       2       0       0  0  2023 ?        00:00:00   [ext4-rsv-conver]
+root        1105       2       0       0  0  2023 ?        00:00:01   [jbd2/dm-4-8]
+root        1106       2       0       0  0  2023 ?        00:00:00   [ext4-rsv-conver]
+root        1136       2       0       0  0  2023 ?        00:00:00   [rpciod]
+root        1138       2       0       0  0  2023 ?        00:00:00   [xprtiod]
+root        1593       2       0       0  0  2023 ?        00:00:00   [nfsiod]
+root        1848       2       0       0  0  2023 ?        00:00:00   [lockd]
+root     2598996       2       0       0  0 20:51 ?        00:00:04   [kworker/u481:2-xprtiod]
+root     2701819       2       0       0  0 21:37 ?        00:00:02   [kworker/u480:3-events_unbound]
+root     2731403       2       0       0  0 21:45 ?        00:00:00   [kworker/3:2-events]
+root     2732354       2       0       0  0 22:04 ?        00:00:00   [kworker/2:1-mm_percpu_wq]
+root     2732364       2       0       0  0 22:04 ?        00:00:00   [kworker/u480:1-events_unbound]
+root     2733127       2       0       0  0 22:12 ?        00:00:00   [kworker/3:3-cgroup_pidlist_destroy]
+root     2734096       2       0       0  0 22:17 ?        00:00:00   [kworker/2:3-cgroup_pidlist_destroy]
+root     2734294       2       0       0  0 22:19 ?        00:00:00   [kworker/0:3-cgroup_destroy]
+root     2734447       2       0       0  0 22:19 ?        00:00:00   [kworker/1:3-cgroup_destroy]
+root     2734972       2       0       0  0 22:26 ?        00:00:00   [kworker/u481:0-xprtiod]
+root     2734977       2       0       0  0 22:26 ?        00:00:00   [kworker/u480:0-rpciod]
+root     2735051       2       0       0  0 22:27 ?        00:00:00   [kworker/0:1-events]
+root     2735151       2       0       0  0 22:30 ?        00:00:00   [kworker/1:1-cgroup_pidlist_destroy]
+root     2735346       2       0       0  0 22:36 ?        00:00:00   [kworker/1:0-events_power_efficient]
+root     2735378       2       0       0  0 22:37 ?        00:00:00   [kworker/1:2-events]
+root           1       0       1       1  0  2023 ?        00:04:53 /usr/lib/systemd/systemd --switched-root --system --deserialize 18
+root         789       1     789     789  0  2023 ?        00:01:06   /usr/lib/systemd/systemd-journald
+root         836       1     836     836  0  2023 ?        00:00:03   /usr/lib/systemd/systemd-udevd
+rpc         1127       1    1127    1127  0  2023 ?        00:01:16   /usr/bin/rpcbind -w -f
+root        1128       1    1128    1128  0  2023 ?        00:00:35   /sbin/auditd
+root        1130    1128    1128    1128  0  2023 ?        00:00:12     /usr/sbin/sedispatch
+libstor+    1165       1    1165    1165  0  2023 ?        00:00:04   /usr/bin/lsmd -d
+dbus        1167       1    1167    1167  0  2023 ?        00:02:42   /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activat
+root        1168       1    1168    1168  0  2023 ?        00:02:20   /usr/sbin/irqbalance --foreground
+root        1171       1    1171    1171  0  2023 ?        00:00:02   /usr/sbin/sssd -i --logger=files
+root        1194    1171    1194    1171  0  2023 ?        00:00:19     /usr/libexec/sssd/sssd_be --domain implicit_files --uid 0 --gid 0 --logger=files
+root        1195    1171    1195    1171  0  2023 ?        00:00:17     /usr/libexec/sssd/sssd_nss --uid 0 --gid 0 --logger=files
+root        1172       1    1172    1172  0  2023 ?        00:00:00   /usr/sbin/mcelog --ignorenodev --daemon --foreground
+root        1174       1    1174    1174  0  2023 ?        00:00:00   /usr/sbin/smartd -n -q never
+root        1175       1    1175    1175  0  2023 ?        00:00:00   /usr/sbin/gpm -m /dev/input/mice -t exps2
+root        1176       1    1176    1176  0  2023 ?        00:00:00   /usr/sbin/hypervvssd -n
+avahi       1177       1    1177    1177  0  2023 ?        00:00:03   avahi-daemon: running [lnxsrv11.local]
+avahi       1190    1177    1177    1177  0  2023 ?        00:00:00     avahi-daemon: chroot helper
+polkitd     1178       1    1178    1178  0  2023 ?        00:00:17   /usr/lib/polkit-1/polkitd --no-debug
+rngd        1182       1    1182    1182  0  2023 ?        00:11:51   /usr/sbin/rngd -f --fill-watermark=0
+chrony      1189       1    1188    1188  0  2023 ?        00:00:03   /usr/sbin/chronyd
+root        1205       1    1205    1205  0  2023 ?        00:00:00   /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+root        1213       1    1213    1213  0  2023 ?        00:26:56   /usr/sbin/NetworkManager --no-daemon
+root        1224       1    1224    1224  0  2023 ?        00:00:00   /usr/sbin/rpc.ypxfrd -f -p 889
+root        1225       1    1225    1225  0  2023 ?        00:06:21   /usr/libexec/platform-python -Es /usr/sbin/tuned -l -P
+root        1235       1    1235    1235  0  2023 ?        00:00:06   /usr/sbin/sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256
+root     2571652    1235 2571652 2571652  0 17:06 ?        00:00:00     sshd: tatehom [priv]
+tatehom  2571678 2571652 2571652 2571652  0 17:07 ?        00:00:02       sshd: tatehom@pts/10
+tatehom  2571680 2571678 2571680 2571680  0 17:07 pts/10   00:00:00         -bash
+root     2574502    1235 2574502 2574502  0 17:37 ?        00:00:00     sshd: sourish [priv]
+sourish  2574508 2574502 2574502 2574502  0 17:37 ?        00:00:00       sshd: sourish@pts/27
+sourish  2574510 2574508 2574510 2574510  0 17:37 pts/27   00:00:00         -bash
+root     2586533    1235 2586533 2586533  0 18:06 ?        00:00:00     sshd: ahjcuniv [priv]
+ahjcuniv 2586566 2586533 2586533 2586533  0 18:06 ?        00:00:03       sshd: ahjcuniv@pts/6
+ahjcuniv 2586568 2586566 2586568 2586568  0 18:06 pts/6    00:00:00         -bash
+ahjcuniv 2701894 2586568 2701894 2586568  0 21:38 pts/6    00:00:00           emacs
+ahjcuniv 2735457 2586568 2735457 2586568  0 22:37 pts/6    00:00:00           /bin/bash ./q12script.sh
+ahjcuniv 2735458 2735457 2735457 2586568  0 22:37 pts/6    00:00:00             ps -e -f -j -H
+root     2587467    1235 2587467 2587467  0 18:19 ?        00:00:00     sshd: moazzami [priv]
+moazzami 2587484 2587467 2587467 2587467  0 18:19 ?        00:00:00       sshd: moazzami@pts/34
+moazzami 2587486 2587484 2587486 2587486  0 18:19 pts/34   00:00:00         -bash
+moazzami 2732099 2587486 2732099 2587486  0 22:01 pts/34   00:00:00           emacs
+root     2588529    1235 2588529 2588529  0 18:31 ?        00:00:00     sshd: dhkim142 [priv]
+dhkim142 2588546 2588529 2588529 2588529  0 18:31 ?        00:00:09       sshd: dhkim142@pts/11
+dhkim142 2588548 2588546 2588548 2588548  0 18:31 pts/11   00:00:00         -bash
+dhkim142 2735108 2588548 2735108 2588548  0 22:28 pts/11   00:00:01           emacs
+root     2588855    1235 2588855 2588855  0 18:34 ?        00:00:00     sshd: mcmg98 [priv]
+mcmg98   2588872 2588855 2588855 2588855  0 18:34 ?        00:00:00       sshd: mcmg98@pts/7
+mcmg98   2588874 2588872 2588874 2588874  0 18:34 pts/7    00:00:00         -bash
+mcmg98   2733668 2588874 2733668 2588874  0 22:15 pts/7    00:00:00           emacs exer2.html
+root     2592951    1235 2592951 2592951  0 19:20 ?        00:00:00     sshd: andresenriquez [priv]
+andrese+ 2592969 2592951 2592951 2592951  0 19:20 ?        00:00:00       sshd: andresenriquez@pts/18
+andrese+ 2592971 2592969 2592971 2592971  0 19:20 pts/18   00:00:00         -bash
+root     2595910    1235 2595910 2595910  0 20:02 ?        00:00:00     sshd: yeh [priv]
+yeh      2595930 2595910 2595910 2595910  0 20:02 ?        00:00:00       sshd: yeh@pts/19
+yeh      2595932 2595930 2595932 2595932  0 20:02 pts/19   00:00:00         -bash
+yeh      2596086 2595932 2596086 2595932  0 20:07 pts/19   00:00:00           man chmod
+yeh      2596101 2596086 2596086 2595932  0 20:07 pts/19   00:00:00             less
+root     2596230    1235 2596230 2596230  0 20:09 ?        00:00:00     sshd: yathish [priv]
+yathish  2596247 2596230 2596230 2596230  0 20:09 ?        00:00:00       sshd: yathish@pts/25
+yathish  2596249 2596247 2596249 2596249  0 20:09 pts/25   00:00:00         -bash
+yathish  2596382 2596249 2596382 2596249  0 20:10 pts/25   00:00:08           emacs notes.txt
+root     2596426    1235 2596426 2596426  0 20:11 ?        00:00:00     sshd: tae [priv]
+tae      2596446 2596426 2596426 2596426  0 20:11 ?        00:00:00       sshd: tae@pts/26
+tae      2596448 2596446 2596448 2596448  0 20:11 pts/26   00:00:00         -bash
+tae      2732979 2596448 2732979 2596448  0 22:10 pts/26   00:00:00           emacs notes.txt
+root     2596528    1235 2596528 2596528  0 20:11 ?        00:00:00     sshd: classzxi [priv]
+classzxi 2596572 2596528 2596528 2596528  0 20:11 ?        00:00:01       sshd: classzxi@pts/29
+classzxi 2596574 2596572 2596574 2596574  0 20:11 pts/29   00:00:00         -bash
+classzxi 2735276 2596574 2735276 2596574  0 22:35 pts/29   00:00:00           emacs exer4.diff
+root     2596761    1235 2596761 2596761  0 20:14 ?        00:00:00     sshd: tianaly [priv]
+tianaly  2596765 2596761 2596761 2596761  0 20:14 ?        00:00:08       sshd: tianaly@pts/17
+tianaly  2596767 2596765 2596767 2596767  0 20:14 pts/17   00:00:00         -bash
+tianaly  2734208 2596767 2734208 2596767  0 22:19 pts/17   00:00:00           vim q12script.sh
+root     2597999    1235 2597999 2597999  0 20:27 ?        00:00:00     sshd: classjle [priv]
+classjle 2598025 2597999 2597999 2597999  0 20:27 ?        00:00:00       sshd: classjle@pts/5
+classjle 2598027 2598025 2598027 2598027  0 20:27 pts/5    00:00:00         -bash
+classjle 2607060 2598027 2607060 2598027  0 21:23 pts/5    00:00:00           man tr
+classjle 2607072 2607060 2607060 2598027  0 21:23 pts/5    00:00:00             less
+root     2598990    1235 2598990 2598990  0 20:51 ?        00:00:00     sshd: stern [priv]
+stern    2599011 2598990 2598990 2598990  0 20:51 ?        00:00:00       sshd: stern@pts/2
+stern    2599013 2599011 2599013 2599013  0 20:51 pts/2    00:00:00         -bash
+stern    2731777 2599013 2731777 2599013  0 21:53 pts/2    00:00:02           emacs exer4.html
+stern    2735358 2599013 2735358 2599013  0 22:36 pts/2    00:00:00           emacs
+root     2599125    1235 2599125 2599125  0 20:53 ?        00:00:00     sshd: lenan [priv]
+lenan    2599144 2599125 2599125 2599125  0 20:53 ?        00:00:00       sshd: lenan@pts/12
+lenan    2599146 2599144 2599146 2599146  0 20:53 pts/12   00:00:00         -bash
+lenan    2735356 2599146 2735356 2599146  0 22:36 pts/12   00:00:00           emacs exer4.html
+root     2599226    1235 2599226 2599226  0 20:53 ?        00:00:00     sshd: justinmorgan [priv]
+justinm+ 2599262 2599226 2599226 2599226  0 20:54 ?        00:00:06       sshd: justinmorgan@pts/1
+justinm+ 2599264 2599262 2599264 2599264  0 20:54 pts/1    00:00:00         -bash
+root     2599630    1235 2599630 2599630  0 20:57 ?        00:00:00     sshd: classkxu [priv]
+classkxu 2599696 2599630 2599630 2599630  0 20:57 ?        00:00:00       sshd: classkxu@pts/23
+classkxu 2599698 2599696 2599698 2599698  0 20:57 pts/23   00:00:00         -bash
+classkxu 2599925 2599698 2599925 2599698  0 21:00 pts/23   00:00:00           emacs
+root     2599935    1235 2599935 2599935  0 21:00 ?        00:00:00     sshd: mirhan [priv]
+mirhan   2599938 2599935 2599935 2599935  0 21:00 ?        00:00:00       sshd: mirhan@pts/0
+mirhan   2599940 2599938 2599940 2599940  0 21:00 pts/0    00:00:00         -bash
+root     2602437    1235 2602437 2602437  0 21:03 ?        00:00:00     sshd: faizihaer403 [priv]
+faiziha+ 2602456 2602437 2602437 2602437  0 21:03 ?        00:00:00       sshd: faizihaer403@pts/31
+faiziha+ 2602458 2602456 2602458 2602458  0 21:03 pts/31   00:00:00         -bash
+root     2605811    1235 2605811 2605811  0 21:14 ?        00:00:00     sshd: devon [priv]
+devon    2605828 2605811 2605811 2605811  0 21:14 ?        00:00:00       sshd: devon@pts/9
+devon    2605830 2605828 2605830 2605830  0 21:14 pts/9    00:00:00         -bash
+root     2606944    1235 2606944 2606944  0 21:23 ?        00:00:00     sshd: alanl [priv]
+alanl    2606963 2606944 2606944 2606944  0 21:23 ?        00:00:00       sshd: alanl@pts/28
+alanl    2606965 2606963 2606965 2606965  0 21:23 pts/28   00:00:00         -bash
+root     2607056    1235 2607056 2607056  0 21:23 ?        00:00:00     sshd: kelvinhjiang [priv]
+kelvinh+ 2607080 2607056 2607056 2607056  0 21:23 ?        00:00:00       sshd: kelvinhjiang@pts/35
+kelvinh+ 2607082 2607080 2607082 2607082  0 21:23 pts/35   00:00:00         -bash
+root     2609072    1235 2609072 2609072  0 21:27 ?        00:00:00     sshd: carmack [priv]
+carmack  2609075 2609072 2609072 2609072  0 21:27 ?        00:00:00       sshd: carmack@notty
+carmack  2609077 2609075 2609077 2609077  0 21:27 ?        00:00:00         bash
+carmack  2735371 2609077 2609077 2609077  0 22:36 ?        00:00:00           sleep 180
+root     2611033    1235 2611033 2611033  0 21:31 ?        00:00:00     sshd: heyohan [priv]
+heyohan  2611051 2611033 2611033 2611033  0 21:31 ?        00:00:00       sshd: heyohan@pts/36
+heyohan  2611053 2611051 2611053 2611053  0 21:31 pts/36   00:00:00         -bash
+heyohan  2701906 2611053 2701906 2611053  0 21:39 pts/36   00:00:00           emacs
+root     2611296    1235 2611296 2611296  0 21:33 ?        00:00:00     sshd: shivumkapoor [priv]
+shivumk+ 2611316 2611296 2611296 2611296  0 21:33 ?        00:00:00       sshd: shivumkapoor@pts/22
+shivumk+ 2611318 2611316 2611318 2611318  0 21:33 pts/22   00:00:00         -bash
+root     2701908    1235 2701908 2701908  0 21:39 ?        00:00:00     sshd: sourish [priv]
+sourish  2701912 2701908 2701908 2701908  0 21:39 ?        00:00:00       sshd: sourish@pts/13
+sourish  2701914 2701912 2701914 2701914  0 21:39 pts/13   00:00:00         -bash
+sourish  2735228 2701914 2735228 2701914  0 22:33 pts/13   00:00:01           emacs
+root     2701991    1235 2701991 2701991  0 21:39 ?        00:00:00     sshd: sourish [priv]
+sourish  2701994 2701991 2701991 2701991  0 21:39 ?        00:00:00       sshd: sourish@notty
+sourish  2701996 2701994 2701996 2701996  0 21:39 ?        00:00:00         /usr/libexec/openssh/sftp-server
+root     2706212    1235 2706212 2706212  0 21:42 ?        00:00:00     sshd: classdkk [priv]
+classdkk 2706217 2706212 2706212 2706212  0 21:42 ?        00:00:00       sshd: classdkk@pts/32
+classdkk 2706219 2706217 2706219 2706219  0 21:42 pts/32   00:00:00         -bash
+root     2732005    1235 2732005 2732005  0 22:00 ?        00:00:00     sshd: yathish [priv]
+yathish  2732008 2732005 2732005 2732005  0 22:01 ?        00:00:00       sshd: yathish@pts/3
+yathish  2732010 2732008 2732010 2732010  0 22:01 pts/3    00:00:00         -bash
+root     2732129    1235 2732129 2732129  0 22:02 ?        00:00:00     sshd: kelvinhjiang [priv]
+kelvinh+ 2732132 2732129 2732129 2732129  0 22:02 ?        00:00:00       sshd: kelvinhjiang@pts/16
+kelvinh+ 2732134 2732132 2732134 2732134  0 22:02 pts/16   00:00:00         -bash
+kelvinh+ 2732987 2732134 2732987 2732134  0 22:11 pts/16   00:00:00           emacs
+root     2732365    1235 2732365 2732365  0 22:04 ?        00:00:00     sshd: alanl [priv]
+alanl    2732368 2732365 2732365 2732365  0 22:04 ?        00:00:00       sshd: alanl@pts/21
+alanl    2732370 2732368 2732370 2732370  0 22:04 pts/21   00:00:00         -bash
+alanl    2732421 2732370 2732421 2732370  0 22:05 pts/21   00:00:00           /usr/local/cs/bin/emacs
+root     2732479    1235 2732479 2732479  0 22:06 ?        00:00:00     sshd: xingbo [priv]
+xingbo   2732521 2732479 2732479 2732479  0 22:06 ?        00:00:01       sshd: xingbo@pts/30
+xingbo   2732523 2732521 2732523 2732523  0 22:06 pts/30   00:00:00         -bash
+xingbo   2733115 2732523 2733115 2732523  0 22:12 pts/30   00:00:00           emacs myspell
+xingbo   2734211 2732523 2734211 2732523  0 22:19 pts/30   00:00:00           emacs test_cases.words
+xingbo   2734853 2732523 2734853 2732523  0 22:23 pts/30   00:00:00           emacs myspell
+xingbo   2735442 2732523 2735442 2732523  0 22:37 pts/30   00:00:00           emacs error.txt
+root     2732654    1235 2732654 2732654  0 22:07 ?        00:00:00     sshd: faizihaer403 [priv]
+faiziha+ 2732663 2732654 2732654 2732654  0 22:07 ?        00:00:01       sshd: faizihaer403@pts/33
+faiziha+ 2732665 2732663 2732665 2732665  0 22:07 pts/33   00:00:00         -bash
+root     2732827    1235 2732827 2732827  0 22:09 ?        00:00:00     sshd: tae [priv]
+tae      2732830 2732827 2732827 2732827  0 22:09 ?        00:00:00       sshd: tae@notty
+tae      2732832 2732830 2732832 2732832  0 22:09 ?        00:00:00         /usr/libexec/openssh/sftp-server
+root     2732874    1235 2732874 2732874  0 22:09 ?        00:00:00     sshd: tae [priv]
+tae      2732879 2732874 2732874 2732874  0 22:09 ?        00:00:00       sshd: tae@notty
+tae      2732882 2732879 2732882 2732882  0 22:09 ?        00:00:00         -bash
+root     2733016    1235 2733016 2733016  0 22:11 ?        00:00:00     sshd: tae [priv]
+tae      2733021 2733016 2733016 2733016  0 22:11 ?        00:00:00       sshd: tae@pts/37
+tae      2733023 2733021 2733023 2733023  0 22:11 pts/37   00:00:00         -bash
+root     2733735    1235 2733735 2733735  0 22:16 ?        00:00:00     sshd: otaleb [priv]
+otaleb   2733740 2733735 2733735 2733735  0 22:16 ?        00:00:00       sshd: otaleb@notty
+otaleb   2733742 2733740 2733742 2733742  0 22:16 ?        00:00:00         -bash
+otaleb   2733785 2733742 2733742 2733742  0 22:16 ?        00:00:00           bash
+root     2734007    1235 2734007 2734007  0 22:17 ?        00:00:00     sshd: cyanez [priv]
+cyanez   2734028 2734007 2734007 2734007  0 22:17 ?        00:00:00       sshd: cyanez@pts/8
+cyanez   2734030 2734028 2734030 2734030  0 22:17 pts/8    00:00:00         -bash
+root     2734120    1235 2734120 2734120  0 22:17 ?        00:00:00     sshd: cyanez [priv]
+cyanez   2734129 2734120 2734120 2734120  0 22:18 ?        00:00:00       sshd: cyanez@pts/4
+cyanez   2734131 2734129 2734131 2734131  0 22:18 pts/4    00:00:00         -bash
+cyanez   2734187 2734131 2734187 2734131  0 22:18 pts/4    00:00:00           emacs notes.txt
+root     2734709    1235 2734709 2734709  0 22:20 ?        00:00:00     sshd: yeh [priv]
+yeh      2734713 2734709 2734709 2734709  0 22:20 ?        00:00:00       sshd: yeh@pts/15
+yeh      2734715 2734713 2734715 2734715  0 22:20 pts/15   00:00:00         -bash
+yeh      2734816 2734715 2734816 2734715  0 22:22 pts/15   00:00:05           emacs
+root     2735381    1235 2735381 2735381  0 22:37 ?        00:00:00     sshd: classdkk [priv]
+classdkk 2735387 2735381 2735381 2735381  0 22:37 ?        00:00:00       sshd: classdkk@pts/20
+classdkk 2735389 2735387 2735389 2735389  0 22:37 pts/20   00:00:00         -bash
+root        1237       1    1237    1237  0  2023 ?        00:00:00   /usr/sbin/hypervkvpd -n
+root        1239       1    1239    1239  0  2023 ?        00:00:34   /usr/sbin/ypserv -f -p 888
+root        1253       1    1253    1253  0  2023 ?        00:00:00   /usr/bin/rhsmcertd
+root        1258       1    1258    1258  0  2023 ?        00:00:03   /usr/sbin/ypbind -n
+root        1259       1    1259    1259  0  2023 ?        00:00:00   /usr/sbin/gssproxy -D
+root        1293       1    1293    1293  0  2023 ?        00:00:00   /usr/sbin/cupsd -l
+root        1294       1    1294    1294  0  2023 ?        00:00:51   /usr/lib/systemd/systemd-logind
+colord      1320       1    1320    1320  0  2023 ?        00:00:00   /usr/libexec/colord
+root        1536       1    1536    1536  0  2023 ?        00:02:25   /usr/sbin/rsyslogd -n
+nrpe        1537       1    1537    1537  0  2023 ?        00:00:05   /usr/sbin/nrpe -c /etc/nagios/nrpe.cfg -f
+root        1697       1    1697    1697  0  2023 ?        00:00:57   sendmail: accepting connections
+smmsp       1734       1    1734    1734  0  2023 ?        00:00:00   sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+rpcuser     1778       1    1778    1778  0  2023 ?        00:00:00   /usr/sbin/rpc.statd
+root        1917       1    1917    1917  0  2023 ?        00:00:00   /usr/sbin/atd -f
+root        1918       1    1918    1918  0  2023 ?        00:00:03   /usr/sbin/crond -n
+root        1922       1    1922    1922  0  2023 tty1     00:00:00   /sbin/agetty -o -p -- \u --noclear tty1 linux
+root     1066882       1 1066882 1066882  0 Jan08 ?        00:00:09   /usr/libexec/udisks2/udisksd
+rtkit    1081560       1 1081560 1081560  0 Jan09 ?        00:00:05   /usr/libexec/rtkit-daemon
+classzxi 2477551       1 2477551 2477551  0 15:42 ?        00:00:00   /usr/lib/systemd/systemd --user
+classzxi 2477553 2477551 2477551 2477551  0 15:42 ?        00:00:00     (sd-pam)
+classzxi 2477592 2477551 2477592 2477592  0 15:42 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+classzxi 2477595 2477551 2477595 2477595  0 15:42 ?        00:00:00     /usr/libexec/gvfsd
+kelvinh+ 2481234       1 2481234 2481234  0 16:33 ?        00:00:00   /usr/lib/systemd/systemd --user
+kelvinh+ 2481236 2481234 2481234 2481234  0 16:33 ?        00:00:00     (sd-pam)
+kelvinh+ 2481275 2481234 2481275 2481275  0 16:33 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+kelvinh+ 2481279 2481234 2481279 2481279  0 16:33 ?        00:00:00     /usr/libexec/gvfsd
+sourish  2484368       1 2484368 2484368  0 16:58 ?        00:00:00   /usr/lib/systemd/systemd --user
+sourish  2484371 2484368 2484368 2484368  0 16:58 ?        00:00:00     (sd-pam)
+sourish  2484410 2484368 2484410 2484410  0 16:58 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+sourish  2484413 2484368 2484413 2484413  0 16:58 ?        00:00:00     /usr/libexec/gvfsd
+tianaly  2571563       1 2571563 2571563  0 17:05 ?        00:00:00   /usr/lib/systemd/systemd --user
+tianaly  2571566 2571563 2571563 2571563  0 17:05 ?        00:00:00     (sd-pam)
+tianaly  2571605 2571563 2571605 2571605  0 17:05 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+tianaly  2571608 2571563 2571608 2571608  0 17:05 ?        00:00:00     /usr/libexec/gvfsd
+tatehom  2571666       1 2571666 2571666  0 17:07 ?        00:00:00   /usr/lib/systemd/systemd --user
+tatehom  2571668 2571666 2571666 2571666  0 17:07 ?        00:00:00     (sd-pam)
+tatehom  2571709 2571666 2571709 2571709  0 17:07 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+tatehom  2571712 2571666 2571712 2571712  0 17:07 ?        00:00:00     /usr/libexec/gvfsd
+ahjcuniv 2586554       1 2586554 2586554  0 18:06 ?        00:00:00   /usr/lib/systemd/systemd --user
+ahjcuniv 2586557 2586554 2586554 2586554  0 18:06 ?        00:00:00     (sd-pam)
+ahjcuniv 2586596 2586554 2586596 2586596  0 18:06 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+ahjcuniv 2586599 2586554 2586599 2586599  0 18:06 ?        00:00:00     /usr/libexec/gvfsd
+moazzami 2587473       1 2587473 2587473  0 18:19 ?        00:00:00   /usr/lib/systemd/systemd --user
+moazzami 2587475 2587473 2587473 2587473  0 18:19 ?        00:00:00     (sd-pam)
+moazzami 2587514 2587473 2587514 2587514  0 18:19 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+moazzami 2587517 2587473 2587517 2587517  0 18:19 ?        00:00:00     /usr/libexec/gvfsd
+carmack  2588346       1 2588346 2588346  0 18:29 ?        00:00:00   /usr/lib/systemd/systemd --user
+carmack  2588349 2588346 2588346 2588346  0 18:29 ?        00:00:00     (sd-pam)
+carmack  2588388 2588346 2588388 2588388  0 18:29 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+carmack  2588391 2588346 2588391 2588391  0 18:29 ?        00:00:00     /usr/libexec/gvfsd
+dhkim142 2588535       1 2588535 2588535  0 18:31 ?        00:00:00   /usr/lib/systemd/systemd --user
+dhkim142 2588537 2588535 2588535 2588535  0 18:31 ?        00:00:00     (sd-pam)
+dhkim142 2588576 2588535 2588576 2588576  0 18:31 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+dhkim142 2588579 2588535 2588579 2588579  0 18:31 ?        00:00:00     /usr/libexec/gvfsd
+mcmg98   2588861       1 2588861 2588861  0 18:34 ?        00:00:00   /usr/lib/systemd/systemd --user
+mcmg98   2588863 2588861 2588861 2588861  0 18:34 ?        00:00:00     (sd-pam)
+mcmg98   2588902 2588861 2588902 2588902  0 18:34 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+mcmg98   2588905 2588861 2588905 2588905  0 18:34 ?        00:00:00     /usr/libexec/gvfsd
+carmack  2591037       1 2590970 2590970  0 19:07 ?        00:00:00   sh /u/cs/ugrad/carmack/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/
+carmack  2591049 2591037 2590970 2590970  0 19:07 ?        00:00:11     /w/home.09/cs/ugrad/carmack/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a6
+carmack  2591274 2591049 2590970 2590970  0 19:07 ?        00:00:11       /w/home.09/cs/ugrad/carmack/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30
+carmack  2591341 2591274 2591341 2591341  0 19:08 pts/14   00:00:00         /bin/bash --init-file /w/home.09/cs/ugrad/carmack/.vscode-server/bin/8b3775030ed1
+carmack  2596311 2591341 2596311 2591341  0 20:09 pts/14   00:00:00           /usr/local/cs/ocaml-5.1.1/bin/ocamlrun /usr/local/cs/bin/ocaml
+carmack  2609126 2591049 2590970 2590970  0 21:27 ?        00:00:02       /w/home.09/cs/ugrad/carmack/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30
+mirhan   2591532       1 2591532 2591532  0 19:09 ?        00:00:00   /usr/lib/systemd/systemd --user
+mirhan   2591534 2591532 2591532 2591532  0 19:09 ?        00:00:00     (sd-pam)
+mirhan   2591573 2591532 2591573 2591573  0 19:09 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+mirhan   2591576 2591532 2591576 2591576  0 19:09 ?        00:00:00     /usr/libexec/gvfsd
+andrese+ 2592958       1 2592958 2592958  0 19:20 ?        00:00:00   /usr/lib/systemd/systemd --user
+andrese+ 2592960 2592958 2592958 2592958  0 19:20 ?        00:00:00     (sd-pam)
+andrese+ 2592999 2592958 2592999 2592999  0 19:20 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+andrese+ 2593002 2592958 2593002 2593002  0 19:20 ?        00:00:00     /usr/libexec/gvfsd
+yeh      2595919       1 2595919 2595919  0 20:02 ?        00:00:00   /usr/lib/systemd/systemd --user
+yeh      2595921 2595919 2595919 2595919  0 20:02 ?        00:00:00     (sd-pam)
+yeh      2595960 2595919 2595960 2595960  0 20:02 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+yeh      2595963 2595919 2595963 2595963  0 20:02 ?        00:00:00     /usr/libexec/gvfsd
+yathish  2596236       1 2596236 2596236  0 20:09 ?        00:00:00   /usr/lib/systemd/systemd --user
+yathish  2596238 2596236 2596236 2596236  0 20:09 ?        00:00:00     (sd-pam)
+yathish  2596277 2596236 2596277 2596277  0 20:09 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+yathish  2596280 2596236 2596280 2596280  0 20:09 ?        00:00:00     /usr/libexec/gvfsd
+tae      2596434       1 2596434 2596434  0 20:11 ?        00:00:00   /usr/lib/systemd/systemd --user
+tae      2596437 2596434 2596434 2596434  0 20:11 ?        00:00:00     (sd-pam)
+tae      2596476 2596434 2596476 2596476  0 20:11 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+tae      2596479 2596434 2596479 2596479  0 20:11 ?        00:00:00     /usr/libexec/gvfsd
+classjle 2598014       1 2598014 2598014  0 20:27 ?        00:00:00   /usr/lib/systemd/systemd --user
+classjle 2598016 2598014 2598014 2598014  0 20:27 ?        00:00:00     (sd-pam)
+classjle 2598055 2598014 2598055 2598055  0 20:27 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+classjle 2598058 2598014 2598058 2598058  0 20:27 ?        00:00:00     /usr/libexec/gvfsd
+stern    2598999       1 2598999 2598999  0 20:51 ?        00:00:00   /usr/lib/systemd/systemd --user
+stern    2599002 2598999 2598999 2598999  0 20:51 ?        00:00:00     (sd-pam)
+stern    2599041 2598999 2599041 2599041  0 20:51 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+stern    2599044 2598999 2599044 2599044  0 20:51 ?        00:00:00     /usr/libexec/gvfsd
+lenan    2599133       1 2599133 2599133  0 20:53 ?        00:00:00   /usr/lib/systemd/systemd --user
+lenan    2599135 2599133 2599133 2599133  0 20:53 ?        00:00:00     (sd-pam)
+lenan    2599174 2599133 2599174 2599174  0 20:53 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+lenan    2599177 2599133 2599177 2599177  0 20:53 ?        00:00:00     /usr/libexec/gvfsd
+justinm+ 2599250       1 2599250 2599250  0 20:54 ?        00:00:00   /usr/lib/systemd/systemd --user
+justinm+ 2599253 2599250 2599250 2599250  0 20:54 ?        00:00:00     (sd-pam)
+justinm+ 2599292 2599250 2599292 2599292  0 20:54 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+justinm+ 2599295 2599250 2599295 2599295  0 20:54 ?        00:00:00     /usr/libexec/gvfsd
+classkxu 2599685       1 2599685 2599685  0 20:57 ?        00:00:00   /usr/lib/systemd/systemd --user
+classkxu 2599687 2599685 2599685 2599685  0 20:57 ?        00:00:00     (sd-pam)
+classkxu 2599726 2599685 2599726 2599726  0 20:57 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+classkxu 2599729 2599685 2599729 2599729  0 20:57 ?        00:00:00     /usr/libexec/gvfsd
+faiziha+ 2602444       1 2602444 2602444  0 21:03 ?        00:00:00   /usr/lib/systemd/systemd --user
+faiziha+ 2602447 2602444 2602444 2602444  0 21:03 ?        00:00:00     (sd-pam)
+faiziha+ 2602486 2602444 2602486 2602486  0 21:03 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+faiziha+ 2602489 2602444 2602489 2602489  0 21:03 ?        00:00:00     /usr/libexec/gvfsd
+devon    2605816       1 2605816 2605816  0 21:14 ?        00:00:00   /usr/lib/systemd/systemd --user
+devon    2605819 2605816 2605816 2605816  0 21:14 ?        00:00:00     (sd-pam)
+devon    2605858 2605816 2605858 2605858  0 21:14 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+devon    2605861 2605816 2605861 2605861  0 21:14 ?        00:00:00     /usr/libexec/gvfsd
+alanl    2606951       1 2606951 2606951  0 21:23 ?        00:00:00   /usr/lib/systemd/systemd --user
+alanl    2606954 2606951 2606951 2606951  0 21:23 ?        00:00:00     (sd-pam)
+alanl    2606993 2606951 2606993 2606993  0 21:23 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+alanl    2606996 2606951 2606996 2606996  0 21:23 ?        00:00:00     /usr/libexec/gvfsd
+classdkk 2608991       1 2608991 2608991  0 21:27 ?        00:00:00   /usr/lib/systemd/systemd --user
+classdkk 2608995 2608991 2608991 2608991  0 21:27 ?        00:00:00     (sd-pam)
+classdkk 2609034 2608991 2609034 2609034  0 21:27 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+classdkk 2609037 2608991 2609037 2609037  0 21:27 ?        00:00:00     /usr/libexec/gvfsd
+heyohan  2611039       1 2611039 2611039  0 21:31 ?        00:00:00   /usr/lib/systemd/systemd --user
+heyohan  2611042 2611039 2611039 2611039  0 21:31 ?        00:00:00     (sd-pam)
+heyohan  2611081 2611039 2611081 2611081  0 21:31 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+heyohan  2611084 2611039 2611084 2611084  0 21:31 ?        00:00:00     /usr/libexec/gvfsd
+shivumk+ 2611305       1 2611305 2611305  0 21:33 ?        00:00:00   /usr/lib/systemd/systemd --user
+shivumk+ 2611307 2611305 2611305 2611305  0 21:33 ?        00:00:00     (sd-pam)
+shivumk+ 2611346 2611305 2611346 2611346  0 21:33 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+shivumk+ 2611349 2611305 2611349 2611349  0 21:33 ?        00:00:00     /usr/libexec/gvfsd
+xingbo   2732510       1 2732510 2732510  0 22:06 ?        00:00:00   /usr/lib/systemd/systemd --user
+xingbo   2732512 2732510 2732510 2732510  0 22:06 ?        00:00:00     (sd-pam)
+xingbo   2732551 2732510 2732551 2732551  0 22:06 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+xingbo   2732554 2732510 2732554 2732554  0 22:06 ?        00:00:00     /usr/libexec/gvfsd
+otaleb   2733121       1 2733121 2733121  0 22:12 ?        00:00:00   /usr/lib/systemd/systemd --user
+otaleb   2733129 2733121 2733121 2733121  0 22:12 ?        00:00:00     (sd-pam)
+otaleb   2733162 2733121 2733162 2733162  0 22:12 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+otaleb   2733165 2733121 2733165 2733165  0 22:12 ?        00:00:00     /usr/libexec/gvfsd
+otaleb   2733232       1 2733140 2733140  0 22:12 ?        00:00:00   sh /w/home.28/home/otaleb/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/b
+otaleb   2733244 2733232 2733140 2733140  0 22:12 ?        00:00:05     /w/home.28/home/otaleb/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/no
+otaleb   2733341 2733244 2733140 2733140  0 22:12 ?        00:00:00       /w/home.28/home/otaleb/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/
+otaleb   2733838 2733244 2733140 2733140  0 22:16 ?        00:00:03       /w/home.28/home/otaleb/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/
+otaleb   2734786 2733838 2733140 2733140  0 22:21 ?        00:00:00         /w/home.28/home/otaleb/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b
+otaleb   2733849 2733244 2733140 2733140  0 22:16 ?        00:00:01       /w/home.28/home/otaleb/.vscode-server/bin/0ee08df0cf4527e40edc9aa28f4b5bd38bbff2b2/
+cyanez   2734017       1 2734017 2734017  0 22:17 ?        00:00:00   /usr/lib/systemd/systemd --user
+cyanez   2734019 2734017 2734017 2734017  0 22:17 ?        00:00:00     (sd-pam)
+cyanez   2734058 2734017 2734058 2734058  0 22:17 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-acti
+cyanez   2734061 2734017 2734061 2734061  0 22:17 ?        00:00:00     /usr/libexec/gvfsd

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dict=$(cat /usr/share/dict/linux.words | tr -cs '[:alnum:]' '\n' | sort -u)
+       
+tr -cs '[:alnum:]' '\n'|sort -u | comm -23 - <(echo "$dict")

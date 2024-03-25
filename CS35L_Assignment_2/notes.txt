@@ -1,0 +1,182 @@
+(setq first (expt 2 606))
+265568996408383549344794103276234313664796558863515961599722069100201779930426121369581251132614642834444664743123250507673289668826\
+353619704759989383293675971915635417696609515864064
+
+(setq second (-(expt 2 607) 1))
+531137992816767098689588206552468627329593117727031923199444138200403559860852242739162502265229285668889329486246501015346579337652\
+707239409519978766587351943831270835393219031728127
+
+(setq result (* first second))
+141053783706712069063207958086063189881486743514715667838838675999954867742652380114104193329037690251561950568709829327164087724366\
+370087116731268159313652487450652439805877296207297446723295166658228846926807786652870188920867879451478364569313922060370695064736\
+073572378695176473055266826253284886383715072974324463835300053138429460296575143368065570759537328128
+
+(defun log2 (n)
+  (if (< n 1)
+      1
+    (let ((output 1))
+      (while (>= n 2)
+        (setq n (/ n 2)
+              output (1+ output)))
+      output)))
+log2
+
+(log2 result)
+1213
+
+-----
+
+Type C-h k C-h k and describe what happens and why. (This should relate to the C-h b output mentioned previously.)
+
+It explains what C-h k does.
+
+Type C-h k M-SPC and describe what happens and why. (This should also relate.)
+
+It explains what M-SPC does.
+
+
+Try out M-SPC on some sample text with a lot of white space, to see how it works.
+It collapses multiple white spaces into one.
+Notice how M-SPC is implemented in terms of a more-general function, which does not have a keybinding. Use M-: to execute this more-general function on a buffer, such that the function changes the buffer’s contents.
+M-x cycle-spacing
+
+
+What does M-x what-line do?
+
+Print the current buffer line number and narrowed line number of point.
+
+-----
+
+What happens when this script is invoked on an empty file like /dev/null, and why?
+IndexError: list index out of range
+
+What happens when this script is invoked with Python 3 rather than Python 2, and why? (You can run Python 3 on the SEASnet hosts by using the command python3 instead of python2.)
+  File "/w/home.24/home/ahjcuniv/randline.py", line 65
+    except IOError as (errno, strerror):
+                      ^
+SyntaxError: invalid syntax
+Syntax between python2 and python3 are different
+
+
+What happens when your shuf.py script is invoked with Python 2 rather than Python 3, and why?
+
+It works fine, it seems that all the necessary syntax and packages are present.
+
+
+Use Bash’s time command to compare the performance of your implementation when run via SEASnet’s /usr/bin/python3 (which should predate Python 3.11), versus running it via /usr/local/cs/bin/python3 (which should be Python 3.11 or later), versus running Coreutils /usr/local/cs/bin/shuf. Use Bash commands like the following to time these three benchmarks (this example is for Coreutils, and assumes /usr/local/cs/bin is at the start of your PATH):
+
+  time shuf < /usr/share/unicode/ucd/BidiTest.txt > /dev/null
+For each of these three benchmarks, run the benchmark at least three times on the text file shown above, and report the median of the sum of the user and system times. Do your benchmarks on the same SEASnet host, and document the CPU and operating system version of the SEASnet host you used by consulting the lscpu command and the /etc/os-release file. If your Python implementation runs on /usr/local/cs/bin/python3 but not /usr/bin/python3, do not benchmark it on the latter; instead, briefly explain which features of the newer Python your program relies on, and why.
+
+
+
+bash-4.4$ python3 --version
+Python 3.12.1
+bash-4.4$ /usr/bin/python3 --version
+Python 3.6.8
+
+bash-4.4$ time python3 shuf.py </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.059s
+user    0m0.038s
+sys     0m0.013s
+
+bash-4.4$ time python3 shuf.py </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.058s
+user    0m0.035s
+sys     0m0.015s
+
+bash-4.4$ time python3 shuf.py </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.059s
+user    0m0.035s
+sys     0m0.016s
+
+Median Sum: 0.051s
+
+
+
+bash-4.4$ time /usr/bin/python3 shuf.py </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.052s
+user    0m0.040s
+sys     0m0.011s
+bash-4.4$ time /usr/bin/python3 shuf.py </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.051s
+user    0m0.038s
+sys     0m0.013s
+bash-4.4$ time /usr/bin/python3 shuf.py </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.051s
+user    0m0.041s
+sys     0m0.010s
+
+Median Sum: 0.051s
+
+
+
+bash-4.4$ time shuf </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.073s
+user    0m0.057s
+sys     0m0.015s
+bash-4.4$ time shuf </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.069s
+user    0m0.056s
+sys     0m0.014s
+bash-4.4$ time shuf </usr/share/unicode/ucd/BidiTest.txt > /dev/null
+
+real    0m0.071s
+user    0m0.056s
+sys     0m0.016s
+
+Median Sum: 0.072s
+
+
+
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  1
+Core(s) per socket:  4
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               85
+Model name:          Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+Stepping:            4
+CPU MHz:             2095.075
+BogoMIPS:            4190.15
+Hypervisor vendor:   Microsoft
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            16896K
+NUMA node0 CPU(s):   0-3
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ibrs ibpb stibp fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt avx512cd avx512bw avx512vl xsaveopt xsavec xsaves
+
+
+NAME="Red Hat Enterprise Linux"
+VERSION="8.5 (Ootpa)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="8.5"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="Red Hat Enterprise Linux 8.5 (Ootpa)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:8::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/red_hat_enterprise_linux/8/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 8"
+REDHAT_BUGZILLA_PRODUCT_VERSION=8.5
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="8.5"
